@@ -3,6 +3,7 @@ import Link from "next/link";
 import Topbar from "./Topbar";
 import Sidebar from "./Sidebar";
 import NavLink from "./NavLink";
+import ServicesDropdown from "./ServicesDropdown";
 
 const Header = () => {
   return (
@@ -15,9 +16,9 @@ const Header = () => {
         <Sidebar />
         <div className="items-center hidden md:flex gap-4">
           <NavLink title="Home" href="/" />
-          <NavLink title="About" href="/about" />
-          <NavLink title="Services" href="/services" />
-          <NavLink title="Contact" href="/contact" />
+          <NavLink title="About" href="#about" />
+          <ServicesDropdown />
+          <NavLink title="Contact" href="#contact" />
         </div>
       </div>
     </header>

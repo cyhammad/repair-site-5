@@ -4,9 +4,9 @@ import CallAndWhatsappButton from "../buttons/CallAndWhatsappButton";
 
 const AboutSection = () => {
   return (
-    <div className="grid grid-cols-2 w-full min-h-[40rem]">
+    <section id="about" className="grid md:grid-cols-2 w-full min-h-[40rem]">
       <div
-        className="w-full bg-cover bg-center bg-no-repeat"
+        className="w-full bg-cover min-h-[30rem] bg-center bg-no-repeat"
         style={{
           backgroundImage: "url(/static/about.jpg)",
         }}
@@ -36,7 +36,7 @@ const AboutSection = () => {
         </ul>
         <CallAndWhatsappButton className="py-10" />
       </div>
-    </div>
+    </section>
   );
 };
 

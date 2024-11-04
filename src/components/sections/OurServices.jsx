@@ -5,7 +5,7 @@ import ServicesCarousel from "../ServicesCarousel";
 
 const OurServices = () => {
   return (
-    <div className="flex items-center justify-center w-full">
+    <section id="services" className="flex items-center justify-center w-full">
       <div className="flex flex-col items-center justify-center w-full max-w-7xl px-5 py-20 gap-5">
         <div className="text-3xl w-fit flex justify-center items-center flex-col gap-2 font-semibold uppercase">
           Our services
@@ -20,7 +20,7 @@ const OurServices = () => {
         </div>
         <ServicesCarousel />
       </div>
-    </div>
+    </section>
   );
 };
 

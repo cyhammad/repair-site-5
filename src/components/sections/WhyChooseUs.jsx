@@ -3,7 +3,7 @@ import CallAndWhatsappButton from "../buttons/CallAndWhatsappButton";
 
 const WhyChooseUs = () => {
   return (
-    <div className="flex justify-center w-full">
+    <section id="contact" className="flex justify-center w-full">
       <div className="flex w-full max-w-7xl px-5 py-20 flex-col justify-center items-center">
         <div className="text-3xl w-fit flex justify-center items-center flex-col gap-2 font-semibold uppercase mb-8">
           Why Choose Us
@@ -54,7 +54,7 @@ const WhyChooseUs = () => {
         </div>
         <CallAndWhatsappButton className="py-5" />
       </div>
-    </div>
+    </section>
   );
 };
 
