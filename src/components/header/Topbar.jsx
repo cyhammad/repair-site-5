@@ -21,6 +21,7 @@ const Topbar = ({ company }) => {
     secondaryColorClass = "secondary"; // Default class
   }
 
+  
   return (
     <div
       className={`flex items-center justify-center w-full bg-${primaryColorClass}`}
