@@ -6,16 +6,20 @@ import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import Header from "@/components/header/Header";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+const Company = ({ params }) => {
+  const slug = params.slug;
+  const company = slug.charAt(0).toUpperCase() + slug.slice(1);
   return (
     <>
-      <Header />
-      <MainBanner />
-      <OurServices />
-      <AboutSection />
-      <WhyChooseUs />
-      <ServiceDetails />
-      <Footer />
+      <Header company={company} />
+      <MainBanner company={company} />
+      <OurServices company={company} />
+      <AboutSection company={company} />
+      <WhyChooseUs company={company} />
+      <ServiceDetails company={company} />
+      <Footer company={company} />
     </>
   );
-}
+};
+
+export default Company;

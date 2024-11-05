@@ -1,14 +1,11 @@
 import "./globals.css";
 import companyName from "../libs/data";
-import { Raleway } from 'next/font/google';
-import Header from "@/components/header/Header";
+import { Raleway } from "next/font/google";
 import { cn } from "@/lib/utils";
-import Footer from "@/components/Footer";
 
 const font = Raleway({
-  subsets: ['latin'],
-  
-})
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: companyName,
@@ -18,12 +15,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={cn(font.className, "flex flex-col w-full")}
-      >
-        <Header />
+      <body className={cn(font.className, "flex flex-col w-full")}>
         {children}
-        <Footer />
       </body>
     </html>
   );

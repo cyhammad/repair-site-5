@@ -10,7 +10,7 @@ import { companyName } from "@/libs/data";
 import { Menu } from "lucide-react";
 import NavLink from "./NavLink";
 
-const Sidebar = () => {
+const Sidebar = ({ company = companyName }) => {
   return (
     <div className="md:hidden">
       <Sheet>
@@ -19,7 +19,7 @@ const Sidebar = () => {
         </SheetTrigger>
         <SheetContent>
           <SheetHeader>
-            <SheetTitle className="py-5">{companyName}</SheetTitle>
+            <SheetTitle className="py-5">{company}</SheetTitle>
           </SheetHeader>
           <div className="flex flex-col items-center justify-center gap-3">
             <NavLink title="Home" href="/" />

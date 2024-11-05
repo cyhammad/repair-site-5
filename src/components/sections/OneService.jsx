@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 const OneService = ({
   title,
   description,
-  commonProblems,
+  commonProblems=[],
   bgColor = "white",
   slug,
 }) => {

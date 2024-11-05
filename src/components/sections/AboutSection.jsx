@@ -2,7 +2,7 @@ import { companyName } from "@/libs/data";
 import React from "react";
 import CallAndWhatsappButton from "../buttons/CallAndWhatsappButton";
 
-const AboutSection = () => {
+const AboutSection = ({company = companyName}) => {
   return (
     <section id="about" className="grid md:grid-cols-2 w-full min-h-[40rem]">
       <div
@@ -17,7 +17,7 @@ const AboutSection = () => {
           <div className="w-1/2 h-0.5 bg-primary"></div>
         </div>
         <p className="my-5">
-          At {companyName}, we are dedicated to providing exceptional home
+          At {company}, we are dedicated to providing exceptional home
           appliance repair services with a focus on quality and customer
           satisfaction. Our team of skilled technicians is experienced in
           diagnosing and fixing a wide range of appliances, ensuring your home
