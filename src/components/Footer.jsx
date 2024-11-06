@@ -3,10 +3,24 @@ import NavLink from "./header/NavLink";
 import Image from "next/image";
 import CallAndWhatsappButton from "./buttons/CallAndWhatsappButton";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const Footer = ({ company = companyName }) => {
   return (
-    <footer className="w-full flex items-center justify-center bg-black/5">
+    <footer
+      className={cn(
+        "w-full flex items-center justify-center",
+        company === "Lg"
+          ? "text-black"
+          : company === "Samsung"
+          ? "bg-samsungSecondary border-samsungSecondary text-black"
+          : company === "Bosch"
+          ? "text-black"
+          : company === "Siemens"
+          ? "bg-siemensSecondary border-siemensSecondary text-black"
+          : "bg-secondary border-secondary text-black"
+      )}
+    >
       <div className="grid md:grid-cols-[2fr_1fr_1fr] border-t border-black/5 w-full max-w-7xl gap-10 px-5 py-10">
         <div className="flex flex-col gap-4">
           {company === "Siemens" ? (
@@ -36,7 +50,9 @@ const Footer = ({ company = companyName }) => {
               <Image src="/static/lg.svg" width={100} height={50} alt="LG" />
             </Link>
           ) : (
-            <Link href="/" className="text-xl font-bold">{company}</Link>
+            <Link href="/" className="text-xl font-bold">
+              {company}
+            </Link>
           )}
           <span className="text-sm font-light max-w-sm">
             Welcome to {company}, your trusted partner in home appliance repair!
@@ -44,7 +60,7 @@ const Footer = ({ company = companyName }) => {
             and efficient repair services for a wide range of household
             appliances.
           </span>
-          <CallAndWhatsappButton />
+          <CallAndWhatsappButton company={company} />
         </div>
         <div className="flex flex-col gap-3">
           <h1 className="text-lg font-semibold">Repair Services</h1>

@@ -1,7 +1,8 @@
 import React from "react";
 import CallAndWhatsappButton from "./buttons/CallAndWhatsappButton";
+import { companyName } from "@/libs/data";
 
-const ServiceCard = ({ title, desc, imgUrl }) => {
+const ServiceCard = ({ title, desc, imgUrl, company = companyName }) => {
   return (
     <div className="bg-black/5 text-center hover:bg-secondary transition-all ease-in duration-200 rounded-sm flex flex-col w-full h-full min-h-[30rem] gap-5">
       <div
@@ -13,7 +14,7 @@ const ServiceCard = ({ title, desc, imgUrl }) => {
       <div className="flex flex-col items-center gap-3 pb-6 px-6">
         <h1 className="text-2xl font-semibold">{title}</h1>
         <span className="text-sm">{desc}</span>
-        <CallAndWhatsappButton />
+        <CallAndWhatsappButton company={company} />
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { allServices, companyName, getData } from "@/libs/data";
 import OneService from "./OneService";
+import { cn } from "@/lib/utils";
 
 const ServiceDetails = ({ company = companyName }) => {
   return (
@@ -10,7 +11,20 @@ const ServiceDetails = ({ company = companyName }) => {
       <div className="flex flex-col items-center justify-center w-full max-w-7xl px-5 py-20 gap-5">
         <div className="text-3xl w-fit flex justify-center items-center flex-col gap-2 font-semibold uppercase">
           Service Details
-          <div className="w-1/2 h-0.5 bg-primary"></div>
+          <div
+            className={cn(
+              "w-1/2 h-0.5",
+              company === "Lg"
+                ? "bg-lgPrimary"
+                : company === "Samsung"
+                ? "bg-samsungPrimary"
+                : company === "Bosch"
+                ? "bg-boschPrimary"
+                : company === "Siemens"
+                ? "bg-siemensPrimary"
+                : "bg-primary"
+            )}
+          ></div>
         </div>
         <div className="max-w-6xl text-center text-sm">
           At {company}, we offer a comprehensive range of home appliance repair
@@ -32,6 +46,7 @@ const ServiceDetails = ({ company = companyName }) => {
             description={service.description}
             commonProblems={service.commonProblems}
             slug={service.slug}
+            company={company}
           />
         ))}
       </div>
