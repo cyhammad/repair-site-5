@@ -47,6 +47,7 @@ const ServiceDetails = ({ company = companyName }) => {
             commonProblems={service.commonProblems}
             slug={service.slug}
             company={company}
+            imgUrl={service.imgUrl}
           />
         ))}
       </div>

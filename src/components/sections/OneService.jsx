@@ -9,17 +9,24 @@ const OneService = ({
   commonProblems = [],
   bgColor = "white",
   slug,
+  imgUrl,
   company = companyName,
 }) => {
   return (
     <div
       className={cn(
-        "w-full px-10 py-16 border border-secondary",
+        "w-full flex flex-col gap-3 border border-secondary relative",
         `bg-${bgColor}`
       )}
       id={slug}
     >
-      <div className="text-3xl w-fit flex justify-center flex-col gap-2 font-semibold uppercase">
+      <div
+        className="bg-center rounded-t-sm bg-cover bg-no-repeat w-full h-[200px]"
+        style={{
+          backgroundImage: `url(${imgUrl})`,
+        }}
+      ></div>
+      <div className="text-3xl px-5 w-fit flex justify-center flex-col gap-2 font-semibold uppercase">
         {title}
         <div
           className={cn(
@@ -36,19 +43,19 @@ const OneService = ({
           )}
         ></div>
       </div>
-      <p className="my-5">{description}</p>
-      <h3 className="text-xl font-semibold mb-2">Common Problems:</h3>
-      <ul className="list-disc list-inside">
+      <p className="px-5">{description}</p>
+      <h3 className="text-xl font-semibold px-5">Common Problems:</h3>
+      <ul className="list-disc list-inside px-5">
         {commonProblems.map((problem, index) => (
           <li key={index}>{problem}</li>
         ))}
       </ul>
-      <p className="my-5">
+      <p className="px-5 pb-28">
         If you're facing any of these issues, don't hesitate to reach out. Our
         prompt and professional repair services will help restore your appliance
         quickly.
       </p>
-      <CallAndWhatsappButton company={company} className="py-10" />
+      <CallAndWhatsappButton company={company} className="px-5 pb-10 absolute bottom-0" />
     </div>
   );
 };
