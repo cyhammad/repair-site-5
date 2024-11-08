@@ -49,7 +49,7 @@ const Sidebar = ({ company = companyName }) => {
                 )}
               >
                 {getData().map((service, index) => (
-                  <Link key={index} href="#">
+                  <Link key={index} href={`/#${service.slug}`}>
                     {service.title}
                   </Link>
                 ))}

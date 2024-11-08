@@ -1,4 +1,4 @@
-import { companyName } from "@/libs/data";
+import { companyName, getData } from "@/libs/data";
 import NavLink from "./header/NavLink";
 import Image from "next/image";
 import CallAndWhatsappButton from "./buttons/CallAndWhatsappButton";
@@ -64,24 +64,21 @@ const Footer = ({ company = companyName }) => {
         </div>
         <div className="flex flex-col gap-3">
           <h1 className="text-lg font-semibold">Repair Services</h1>
-          <NavLink title="Washing Machine" href="/" className="text-sm" />
-          <NavLink title="Dryer" href="/about" className="text-sm" />
-          <NavLink
-            title="Stover / Cooker"
-            href="/services"
-            className="text-sm"
-          />
-          <NavLink title="Refrigerator" href="/contact" className="text-sm" />
-          <NavLink title="Gas Oven" href="/contact" className="text-sm" />
-          <NavLink title="Dishwasher" href="/contact" className="text-sm" />
-          <NavLink title="Television" href="/contact" className="text-sm" />
+          {getData(company).map((service, index) => (
+            <NavLink
+              title={service.title}
+              href={`/#${service.slug}`}
+              className="text-sm"
+              key={index}
+            />
+          ))}
         </div>
         <div className="flex flex-col gap-3">
           <h1 className="text-lg font-semibold">Links</h1>
           <NavLink title="Home" href="/" className="text-sm" />
-          <NavLink title="About" href="/about" className="text-sm" />
-          <NavLink title="Services" href="/services" className="text-sm" />
-          <NavLink title="Contact" href="/contact" className="text-sm" />
+          <NavLink title="About" href="/#about" className="text-sm" />
+          <NavLink title="Services" href="/#services" className="text-sm" />
+          <NavLink title="Contact" href="/#contact" className="text-sm" />
         </div>
       </div>
     </footer>

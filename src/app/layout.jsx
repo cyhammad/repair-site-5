@@ -2,6 +2,7 @@ import "./globals.css";
 import companyName from "../libs/data";
 import { Raleway } from "next/font/google";
 import { cn } from "@/lib/utils";
+import FixedCallButtons from "@/components/buttons/FixedCallButtons";
 
 const font = Raleway({
   subsets: ["latin"],
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={cn(font.className, "flex flex-col w-full")}>
         {children}
+        <FixedCallButtons />
       </body>
     </html>
   );
