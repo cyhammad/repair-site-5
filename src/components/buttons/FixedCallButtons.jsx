@@ -21,7 +21,7 @@ export default function FixedCallButtons() {
         </button>
         <button
           onClick={dialPhone}
-          className="rounded-md flex items-center justify-center h-14 w-14 border-black/10 border bg-secondary pointer-events-auto"
+          className="rounded-md flex items-center justify-center h-14 w-14 border-black/10 border bg-primary pointer-events-auto"
         >
           <Image
             quality={100}
