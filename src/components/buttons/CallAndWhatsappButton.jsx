@@ -1,12 +1,14 @@
+"use client";
+
 import { cn } from "@/lib/utils";
-import { companyName } from "@/libs/data";
-import Image from "next/image";
+import { companyName, dialPhone, sendMessage } from "@/libs/data";
 
 const CallAndWhatsappButton = ({ className, company = companyName }) => {
   return (
     <div className={cn(className, "flex items-center gap-3")}>
       {/* Call Us Button */}
       <button
+        onClick={dialPhone}
         className={cn(
           "group flex items-center gap-2 px-4 rounded-sm text-sm py-2",
           company === "Lg"
@@ -43,6 +45,7 @@ const CallAndWhatsappButton = ({ className, company = companyName }) => {
 
       {/* Whatsapp Button */}
       <button
+        onClick={sendMessage}
         className={cn(
           "group flex items-center gap-2 px-4 rounded-sm text-sm py-2",
           company === "Lg"

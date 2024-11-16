@@ -2,6 +2,18 @@ export const companyName = "Home Appliances Fix UAE";
 
 export const phoneNumber = "+971523251847";
 
+export const sendMessage = () => {
+  const message = "Hello, I want your repair services";
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    message
+  )}`;
+  window.open(url, "_blank"); // Opens WhatsApp in a new tab
+};
+
+export const dialPhone = () => {
+  window.location.href = `tel:${phoneNumber}`;
+};
+
 export const getData = (company) => {
   const allData = [
     {
