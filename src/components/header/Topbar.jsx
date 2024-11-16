@@ -1,3 +1,5 @@
+"use client";
+
 import { companyName, dialPhone, phoneNumber, sendMessage } from "@/libs/data";
 import Link from "next/link";
 import { cn } from "@/lib/utils"; // Adjusted import path as requested
