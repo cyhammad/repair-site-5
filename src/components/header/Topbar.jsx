@@ -1,4 +1,4 @@
-import { companyName, phoneNumber } from "@/libs/data";
+import { companyName, dialPhone, phoneNumber, sendMessage } from "@/libs/data";
 import Link from "next/link";
 import { cn } from "@/lib/utils"; // Adjusted import path as requested
 
@@ -20,7 +20,10 @@ const Topbar = ({ company }) => {
       )}
     >
       <div className="grid grid-cols-[1fr_1px_1fr] gap-2 w-full max-w-7xl">
-        <div className="flex items-center justify-center gap-1 px-5 py-2 text-sm">
+        <div
+          onClick={dialPhone}
+          className="flex items-center justify-center gap-1 px-5 py-2 text-sm"
+        >
           {phoneSvg}
           Call us
           <Link className="group relative hidden sm:block" href="/">
@@ -29,7 +32,10 @@ const Topbar = ({ company }) => {
           </Link>
         </div>
         <span className="border-[0.5px] border-black/50 h-8 mt-0.5"></span>
-        <div className="flex items-center justify-center gap-1 px-5 py-2 text-sm">
+        <div
+          onClick={sendMessage}
+          className="flex items-center justify-center gap-1 px-5 py-2 text-sm"
+        >
           {whatsappSvg}
           Whatsapp
           <Link className="group relative hidden sm:block" href="/">
