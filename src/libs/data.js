@@ -1,4 +1,5 @@
 export const companyName = "Home Appliances Fix UAE";
+
 export const phoneNumber = "+971523251847";
 
 export const getData = (company) => {
