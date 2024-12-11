@@ -61,7 +61,7 @@ const Footer = () => {
             </Link>
           )}
           <span className="text-sm font-light max-w-sm">
-            Welcome to {company}, your trusted partner in home appliance repair!
+            Welcome to {company}, your most trusted partner in home appliance repair!
             With over years of experience, we specialize in providing reliable
             and efficient repair services for a wide range of household
             appliances.
