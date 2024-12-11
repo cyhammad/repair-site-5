@@ -1,5 +1,5 @@
 import "./globals.css";
-import companyName from "../libs/data";
+import { companyName } from '../libs/data';
 import { Raleway } from "next/font/google";
 import { cn } from "@/lib/utils";
 import FixedCallButtons from "@/components/buttons/FixedCallButtons";

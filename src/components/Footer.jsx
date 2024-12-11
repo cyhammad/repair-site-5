@@ -1,11 +1,17 @@
+"use client";
 import { companyName, getData } from "@/libs/data";
 import NavLink from "./header/NavLink";
 import Image from "next/image";
 import CallAndWhatsappButton from "./buttons/CallAndWhatsappButton";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
-const Footer = ({ company = companyName }) => {
+const Footer = () => {
+  const pathname = usePathname();
+  const isWaterHeaterRoute = pathname === "/companies/water-heater";
+  const company = isWaterHeaterRoute ? "Home Appliance Fix UAE" : companyName;
+
   return (
     <footer
       className={cn(
@@ -34,7 +40,7 @@ const Footer = ({ company = companyName }) => {
             </Link>
           ) : company === "Bosch" ? (
             <Link href="/companies/bosch">
-              <Image src="/static/bosch.svg" width={150} height={50} alt="LG" />
+              <Image src="/static/bosch.svg" width={150} height={50} alt="Bosch" />
             </Link>
           ) : company === "Samsung" ? (
             <Link href="/companies/samsung">
@@ -42,7 +48,7 @@ const Footer = ({ company = companyName }) => {
                 src="/static/samsung.svg"
                 width={120}
                 height={50}
-                alt="LG"
+                alt="Samsung"
               />
             </Link>
           ) : company === "Lg" ? (

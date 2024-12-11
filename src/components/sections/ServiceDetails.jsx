@@ -1,8 +1,20 @@
-import { allServices, companyName, getData } from "@/libs/data";
+"use client";
+
+import { getData, companyName } from "@/libs/data";
+import { getSolarData } from "@/libs/solardata"; // Import solar data
 import OneService from "./OneService";
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 const ServiceDetails = ({ company = companyName }) => {
+  const pathname = usePathname();
+
+  // Determine which data to use based on the route
+  const services =
+    pathname === "/companies/water-heater"
+      ? getSolarData(company) // Use solar data for water-heater route
+      : getData(company); // Use general data for other routes
+
   return (
     <div
       className="flex flex-col items-center justify-center w-full shadow-xl bg-black/5"
@@ -27,7 +39,7 @@ const ServiceDetails = ({ company = companyName }) => {
           ></div>
         </div>
         <div className="max-w-6xl text-center text-sm">
-          At {company}, we offer a comprehensive range of home appliance repair
+        We offer a comprehensive range of home appliance repair
           services tailored to meet your specific needs. Our skilled technicians
           are trained to handle various appliance issues, from refrigerators and
           washers to ovens and dishwashers. We pride ourselves on our
@@ -40,8 +52,9 @@ const ServiceDetails = ({ company = companyName }) => {
         </div>
       </div>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-5 gap-5">
-        {getData(company).map((service) => (
+        {services.map((service) => (
           <OneService
+            key={service.slug}
             title={service.title}
             description={service.description}
             commonProblems={service.commonProblems}

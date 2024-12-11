@@ -25,7 +25,7 @@ const WhyChooseUs = ({ company = companyName }) => {
         </div>
         <div className="max-w-6xl mx-auto text-lg mb-6">
           <p className="mb-4">
-            At {company}, we understand that choosing the right appliance repair
+         We understand that choosing the right appliance repair
             service is crucial for your home. Our commitment to excellence,
             combined with our extensive experience, makes us the ideal choice
             for all your appliance needs. Here’s why our customers trust us:

@@ -6,8 +6,8 @@ import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import Header from "@/components/header/Header";
 import Footer from "@/components/Footer";
 
-const Company = ({ params }) => {
-  const slug = params.slug;
+const Company = async ({ params }) => {
+  const { slug } = await params; // Await the params
   const company = slug.charAt(0).toUpperCase() + slug.slice(1);
   return (
     <>

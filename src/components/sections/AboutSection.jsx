@@ -1,9 +1,40 @@
+"use client";
+
 import { companyName } from "@/libs/data";
 import React from "react";
 import CallAndWhatsappButton from "../buttons/CallAndWhatsappButton";
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 const AboutSection = ({ company = companyName }) => {
+  const pathname = usePathname();
+
+  // Define services for water-heater and general cases
+  const waterHeaterServices = [
+    "Solar Water Heater Repair",
+    "Leaking Pipes and Connections",
+    "Faulty Temperature Sensors",
+    "Improper Installation Issues",
+    "Blocked or Clogged Pipes",
+    "Circulation Pump Not Working",
+  ];
+
+  const generalServices = [
+    "Washing Machine Repair",
+    "Dryer Repair",
+    "Dishwasher Repair",
+    "Stove/Cooker Repair",
+    "Television Repair",
+    "Gas Oven Repair",
+    "Fridge Repair",
+  ];
+
+  // Determine which services to display
+  const services =
+    pathname === "/companies/water-heater"
+      ? waterHeaterServices
+      : generalServices;
+
   return (
     <section id="about" className="grid md:grid-cols-2 w-full min-h-[40rem]">
       <div
@@ -31,7 +62,7 @@ const AboutSection = ({ company = companyName }) => {
           ></div>
         </div>
         <p className="my-5">
-          At {company}, we are dedicated to providing exceptional home appliance
+         We are dedicated to providing exceptional home appliance
           repair services with a focus on quality and customer satisfaction. Our
           team of skilled technicians is experienced in diagnosing and fixing a
           wide range of appliances, ensuring your home runs smoothly. Trust us
@@ -40,13 +71,9 @@ const AboutSection = ({ company = companyName }) => {
         </p>
         <h3 className="text-xl font-semibold mb-2">Services We Offer:</h3>
         <ul className="list-disc list-inside">
-          <li>Washing Machine Repair</li>
-          <li>Dryer Repair</li>
-          <li>Dishwasher Repair</li>
-          <li>Stove/Cooker Repair</li>
-          <li>Television Repair</li>
-          <li>Gas Oven Repair</li>
-          <li>Fridge Repair</li>
+          {services.map((service, index) => (
+            <li key={index}>{service}</li>
+          ))}
         </ul>
         <CallAndWhatsappButton company={company} className="py-10" />
       </div>

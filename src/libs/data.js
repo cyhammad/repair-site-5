@@ -1,3 +1,4 @@
+
 export const companyName = "Home Appliances Fix UAE";
 
 export const phoneNumber = "+971523251847";
@@ -169,5 +170,7 @@ export const getData = (company) => {
       "Input selection problems",
     ],
   };
+  
   return company === companyName ? allData.concat(tvRepair) : allData;
+  
 };
