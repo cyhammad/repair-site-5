@@ -7,10 +7,9 @@ const WhyChooseUs = ({ company = companyName }) => {
     <section id="contact" className="flex justify-center w-full">
       <div className="flex w-full max-w-7xl px-5 py-20 flex-col justify-center items-center">
         <div className="text-3xl w-fit flex justify-center items-center flex-col gap-2 font-semibold uppercase mb-8">
-          Why Choose Us
           <div
             className={cn(
-              "w-1/2 h-0.5",
+              "w-1/2 h-1 rounded-full",
               company === "Lg"
                 ? "bg-lgPrimary"
                 : company === "Samsung"
@@ -19,16 +18,17 @@ const WhyChooseUs = ({ company = companyName }) => {
                 ? "bg-boschPrimary"
                 : company === "Siemens"
                 ? "bg-siemensPrimary"
-                : "bg-primary"
+                : "bg-black"
             )}
           ></div>
+          Why Choose Us
         </div>
         <div className="max-w-6xl mx-auto text-lg mb-6">
           <p className="mb-4">
-         We understand that choosing the right appliance repair
-            service is crucial for your home. Our commitment to excellence,
-            combined with our extensive experience, makes us the ideal choice
-            for all your appliance needs. Here’s why our customers trust us:
+            We understand that choosing the right appliance repair service is
+            crucial for your home. Our commitment to excellence, combined with
+            our extensive experience, makes us the ideal choice for all your
+            appliance needs. Here’s why our customers trust us:
           </p>
           <ul className="list-disc list-inside space-y-2">
             <li>

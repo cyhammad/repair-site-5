@@ -13,32 +13,19 @@ const OurServices = ({ company = companyName }) => {
 
   return (
     <section id="services" className="flex items-center justify-center w-full">
-      <div className="flex flex-col items-center justify-center w-full max-w-7xl px-5 py-20 gap-5">
-        <div className="text-3xl w-fit flex justify-center items-center flex-col gap-2 font-semibold uppercase">
+      <div className="flex flex-col justify-center w-full max-w-7xl px-5 py-20 gap-5">
+        <div className="text-3xl w-fit flex justify-center flex-col gap-2 font-semibold uppercase">
+          <div className="w-1/3 h-1 rounded-full bg-black"></div>
           Our services
-          <div
-            className={cn(
-              "w-1/2 h-0.5",
-              company === "Lg"
-                ? "bg-lgPrimary"
-                : company === "Samsung"
-                ? "bg-samsungPrimary"
-                : company === "Bosch"
-                ? "bg-boschPrimary"
-                : company === "Siemens"
-                ? "bg-siemensPrimary"
-                : "bg-primary"
-            )}
-          ></div>
         </div>
-        <div className="max-w-3xl text-center text-sm">
+        <div className="max-w-3xl text-sm">
           {showCompanyName ? (
             <>
-           Our mission is to deliver top-notch repair services
-              that exceed our customers' expectations. We understand that a
-              malfunctioning appliance can disrupt your daily routine, which is
-              why we strive for quick turnaround times and exceptional customer
-              service. Your satisfaction is our priority!
+              Our mission is to deliver top-notch repair services that exceed
+              our customers' expectations. We understand that a malfunctioning
+              appliance can disrupt your daily routine, which is why we strive
+              for quick turnaround times and exceptional customer service. Your
+              satisfaction is our priority!
             </>
           ) : (
             <>

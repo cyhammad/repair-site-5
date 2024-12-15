@@ -37,15 +37,8 @@ const AboutSection = ({ company = companyName }) => {
 
   return (
     <section id="about" className="grid md:grid-cols-2 w-full min-h-[40rem]">
-      <div
-        className="w-full bg-cover min-h-[30rem] bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url(/static/about.jpg)",
-        }}
-      ></div>
-      <div className="w-full bg-black/5 px-10 py-16">
+      <div className="w-full bg-black text-white px-10 py-16">
         <div className="text-3xl w-fit flex justify-center flex-col gap-2 font-semibold uppercase">
-          About us
           <div
             className={cn(
               "w-1/2 h-0.5",
@@ -60,14 +53,15 @@ const AboutSection = ({ company = companyName }) => {
                 : "bg-primary"
             )}
           ></div>
+          About us
         </div>
         <p className="my-5">
-         We are dedicated to providing exceptional home appliance
-          repair services with a focus on quality and customer satisfaction. Our
-          team of skilled technicians is experienced in diagnosing and fixing a
-          wide range of appliances, ensuring your home runs smoothly. Trust us
-          to restore your appliances quickly and efficiently, allowing you to
-          get back to your daily routine.
+          We are dedicated to providing exceptional home appliance repair
+          services with a focus on quality and customer satisfaction. Our team
+          of skilled technicians is experienced in diagnosing and fixing a wide
+          range of appliances, ensuring your home runs smoothly. Trust us to
+          restore your appliances quickly and efficiently, allowing you to get
+          back to your daily routine.
         </p>
         <h3 className="text-xl font-semibold mb-2">Services We Offer:</h3>
         <ul className="list-disc list-inside">
@@ -77,6 +71,12 @@ const AboutSection = ({ company = companyName }) => {
         </ul>
         <CallAndWhatsappButton company={company} className="py-10" />
       </div>
+      <div
+        className="w-full bg-cover min-h-[30rem] bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url(/static/about.jpg)",
+        }}
+      ></div>
     </section>
   );
 };

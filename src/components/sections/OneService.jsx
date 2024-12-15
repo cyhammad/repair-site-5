@@ -15,35 +15,27 @@ const OneService = ({
   return (
     <div
       className={cn(
-        "w-full flex flex-col gap-3 border border-secondary relative",
+        "w-full flex flex-col gap-3 border rounded-lg border-secondary relative",
         `bg-${bgColor}`
       )}
       id={slug}
     >
-      <div
-        className="bg-center rounded-t-sm bg-cover bg-no-repeat w-full h-[200px]"
-        style={{
-          backgroundImage: `url(${imgUrl})`,
-        }}
-      ></div>
-      <div className="text-3xl px-5 w-fit flex justify-center flex-col gap-2 font-semibold uppercase">
+      <div className="text-xl px-5 py-5 w-fit flex justify-center flex-col gap-2 font-semibold">
         {title}
+      </div>
+      <div className="p-2">
         <div
-          className={cn(
-            "w-1/2 h-0.5",
-            company === "Lg"
-              ? "bg-lgPrimary"
-              : company === "Samsung"
-              ? "bg-samsungPrimary"
-              : company === "Bosch"
-              ? "bg-boschPrimary"
-              : company === "Siemens"
-              ? "bg-siemensPrimary"
-              : "bg-primary"
-          )}
+          className="bg-center rounded-t-sm bg-cover bg-no-repeat w-full h-[200px]"
+          style={{
+            backgroundImage: `url(${imgUrl})`,
+          }}
         ></div>
       </div>
       <p className="px-5">{description}</p>
+      <CallAndWhatsappButton
+        company={company}
+        className="px-5 pb-10 absolute bottom-0"
+      />
       <h3 className="text-xl font-semibold px-5">Common Problems:</h3>
       <ul className="list-disc list-inside px-5">
         {commonProblems.map((problem, index) => (
@@ -55,7 +47,6 @@ const OneService = ({
         prompt and professional repair services will help restore your appliance
         quickly.
       </p>
-      <CallAndWhatsappButton company={company} className="px-5 pb-10 absolute bottom-0" />
     </div>
   );
 };

@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 const Footer = () => {
   const pathname = usePathname();
   const isWaterHeaterRoute = pathname === "/companies/water-heater";
-  const company = isWaterHeaterRoute ? "Home Appliance Fix UAE" : companyName;
+  const company = isWaterHeaterRoute ? "Repair Site 5" : companyName;
 
   return (
     <footer
@@ -24,7 +24,7 @@ const Footer = () => {
           ? "text-black"
           : company === "Siemens"
           ? "bg-siemensSecondary border-siemensSecondary text-black"
-          : "bg-secondary border-secondary text-black"
+          : "bg-primary text-black"
       )}
     >
       <div className="grid md:grid-cols-[2fr_1fr_1fr] border-t border-black/5 w-full max-w-7xl gap-10 px-5 py-10">

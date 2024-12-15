@@ -8,14 +8,14 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <>
+    <div className="w-full flex flex-col pt-10">
       <Header />
       <MainBanner />
-      <OurServices />
-      <AboutSection />
       <WhyChooseUs />
+      <AboutSection />
+      <OurServices />
       <ServiceDetails />
       <Footer />
-    </>
+    </div>
   );
 }

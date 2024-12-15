@@ -1,4 +1,4 @@
-export const companyName = "Home Appliances Fix UAE";
+export const companyName = "Repair Site 5";
 
 export const phoneNumber = "+971523251847";
 

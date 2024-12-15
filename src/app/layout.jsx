@@ -1,12 +1,12 @@
 import "./globals.css";
 import { companyName } from '../libs/data';
-import { Raleway } from "next/font/google";
+import { Open_Sans, Raleway } from "next/font/google";
 import { cn } from "@/lib/utils";
 import FixedCallButtons from "@/components/buttons/FixedCallButtons";
 import Script from "next/script";
 
 
-const font = Raleway({
+const font = Open_Sans({
   subsets: ["latin"],
 });
 
