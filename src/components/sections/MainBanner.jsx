@@ -22,11 +22,16 @@ const MainBanner = ({ company = companyName }) => {
   return (
     <div
       className={cn(
-        "flex items-center justify-center w-full shadow-lg min-h-[35rem] h-full",
-        company !== companyName ? "" : "bg-primary"
+        "flex items-center justify-center w-full shadow-lg min-h-[45rem] pt-5 h-full"
       )}
+      style={{
+        backgroundImage: "url(/static/kitchen.jpg)",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
-      <div className="grid md:grid-cols-2 px-5 pt-36 pb-10 md:py-10 gap-5 w-full max-w-7xl">
+      <div className="grid md:grid-cols-2 bg-white/80 px-5 pt-36 pb-10 md:py-10 gap-5 w-full max-w-7xl">
         <div className="flex flex-col justify-center gap-5 w-full">
           <h1 className="text-4xl max-w-[550px] font-bold">
             We offer reliable and affordable services
@@ -39,7 +44,7 @@ const MainBanner = ({ company = companyName }) => {
           </p>
           <CallAndWhatsappButton company={dynamicCompany} className="py-5" />
         </div>
-        <div className="w-full md:p-20">
+        <div className="w-full border-4 border-tertiary rounded-3xl overflow-hidden">
           <Carousel
             opts={{
               loop: true,
