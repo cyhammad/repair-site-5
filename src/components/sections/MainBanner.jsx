@@ -21,7 +21,7 @@ const MainBanner = ({ company = companyName }) => {
   return (
     <div
       className={cn(
-        "flex items-center justify-center w-full  min-h-[35rem] h-full",
+        "flex items-center justify-center w-full shadow-lg min-h-[35rem] h-full",
         company !== companyName ? "" : "bg-primary"
       )}
     >
@@ -47,7 +47,7 @@ const MainBanner = ({ company = companyName }) => {
             <CarouselContent>
               <CarouselItem className="">
                 <Image
-                  src="/static/washing.jpeg"
+                  src="/static/washing.avif"
                   width={400}
                   height={400}
                   className="w-full h-full"
@@ -56,7 +56,7 @@ const MainBanner = ({ company = companyName }) => {
               </CarouselItem>
               <CarouselItem className="">
                 <Image
-                  src="/static/tv.jpeg"
+                  src="/static/tv.avif"
                   width={400}
                   height={400}
                   className="w-full h-full"
@@ -65,7 +65,7 @@ const MainBanner = ({ company = companyName }) => {
               </CarouselItem>
               <CarouselItem className="">
                 <Image
-                  src="/static/fridge.jpeg"
+                  src="/static/fridge.jpg"
                   width={400}
                   height={400}
                   className="w-full h-full"

@@ -78,7 +78,7 @@ const AboutSection = ({ company = companyName }) => {
         <div
           className="w-full bg-cover min-h-[25rem] rounded-2xl border-4 border-tertiary bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url(/static/about.jpg)",
+            backgroundImage: "url(/static/about.avif)",
           }}
         ></div>
       </div>

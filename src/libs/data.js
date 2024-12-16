@@ -19,7 +19,7 @@ export const getData = (company) => {
   const allData = [
     {
       title: "Dishwasher Repair",
-      imgUrl: "/static/dishwasher.jpeg",
+      imgUrl: "/static/dishwasher.avif",
       slug: "dishwasher-repair",
       description: `At ${company}, we specialize in providing high-quality dishwasher repair services. Our expert technicians are trained to diagnose and resolve a wide range of dishwasher issues, ensuring your appliance operates efficiently and effectively.`,
       commonProblems: [
@@ -37,7 +37,7 @@ export const getData = (company) => {
     },
     {
       title: "Dryer Repair",
-      imgUrl: "/static/dryer.jpeg",
+      imgUrl: "/static/dryer.webp",
       slug: "dryer-repair",
       description: `At ${company}, we offer expert dryer repair services to ensure your appliance functions properly. Our trained technicians can address a variety of dryer issues, helping you get back to your laundry routine quickly.`,
       commonProblems: [
@@ -56,7 +56,7 @@ export const getData = (company) => {
     {
       title: "Washing Machine Repair",
       slug: "washing-machine-repair",
-      imgUrl: "/static/washing.jpeg",
+      imgUrl: "/static/washing.avif",
       description: `At ${company}, we provide reliable washing machine repair services. Our experienced technicians can quickly diagnose and resolve various washing machine problems, ensuring your laundry is done efficiently.`,
       commonProblems: [
         "Machine not turning on",
@@ -118,7 +118,7 @@ export const getData = (company) => {
     {
       title: "Oven Repair",
       slug: "oven-repair",
-      imgUrl: "/static/oven.jpeg",
+      imgUrl: "/static/oven.jpg",
       description: `At ${company}, we specialize in oven repair services to keep your cooking appliances in top shape. Our technicians are trained to handle various oven issues, ensuring you can cook your meals without interruption.`,
       commonProblems: [
         "Oven not heating",
@@ -136,7 +136,7 @@ export const getData = (company) => {
     {
       title: "Fridge Repair",
       slug: "fridge-repair",
-      imgUrl: "/static/fridge.jpeg",
+      imgUrl: "/static/fridge.jpg",
       description: `At ${company}, we offer comprehensive fridge repair services. Our experienced technicians can diagnose and fix a variety of refrigerator issues, ensuring your food stays fresh and safe.`,
       commonProblems: [
         "Fridge not cooling",
@@ -155,7 +155,7 @@ export const getData = (company) => {
   const tvRepair = company === companyName && {
     title: "TV Repair",
     slug: "tv-repair",
-    imgUrl: "/static/tv.jpeg",
+    imgUrl: "/static/tv.avif",
     description: `At ${company}, we provide reliable TV repair services. Our skilled technicians can troubleshoot and resolve various television issues, ensuring you enjoy your favorite shows without disruption.`,
     commonProblems: [
       "TV not turning on",
