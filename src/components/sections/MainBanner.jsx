@@ -1,7 +1,16 @@
-"use client"
+"use client";
 import { companyName } from "@/libs/data";
 import CallAndWhatsappButton from "../buttons/CallAndWhatsappButton";
 import { usePathname } from "next/navigation";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const MainBanner = ({ company = companyName }) => {
   const pathname = usePathname();
@@ -10,18 +19,61 @@ const MainBanner = ({ company = companyName }) => {
     pathname === "/companies/water-heater" ? "Water Heater" : company;
 
   return (
-    <div className="flex items-center justify-center w-full bg-[url(/static/kitchen.jpg)] bg-cover bg-fixed bg-no-repeat bg-center min-h-[35rem] h-full">
-      <div className="bg-black/85 text-white w-full h-full min-h-[35rem] flex items-center justify-center">
-        <div className="flex flex-col uppercase px-5 py-10 w-full max-w-7xl">
-          <h2 className="mb-3">
-            Best repair <span className="text-primary">services</span>
-          </h2>
-          <h1 className="text-4xl font-bold uppercase">We offer reliable and affordable services</h1>
-          <h1 className="text-4xl">{dynamicCompany} repairs</h1>
-          <CallAndWhatsappButton
-            company={dynamicCompany}
-            className="py-5"
-          />
+    <div
+      className={cn(
+        "flex items-center justify-center w-full  min-h-[35rem] h-full",
+        company !== companyName ? "" : "bg-primary"
+      )}
+    >
+      <div className="grid md:grid-cols-2 px-5 pt-36 pb-10 md:py-10 gap-5 w-full max-w-7xl">
+        <div className="flex flex-col justify-center gap-5 w-full">
+          <h1 className="text-4xl max-w-[550px] font-bold">
+            We offer reliable and affordable services
+          </h1>
+          <p className="max-w-[550px]">
+            Quick and Reliable Appliance Repair is offered by Karsaaz in
+            Rawalpindi near you. Kitchen and Laundry Appliance Repair with our
+            experts. Call us today. Pro technician Quote. Services: Appliance
+            Repair, Oven Repair.
+          </p>
+          <CallAndWhatsappButton company={dynamicCompany} className="py-5" />
+        </div>
+        <div className="w-full md:p-20">
+          <Carousel
+            opts={{
+              loop: true,
+            }}
+          >
+            <CarouselContent>
+              <CarouselItem className="">
+                <Image
+                  src="/static/washing.jpeg"
+                  width={400}
+                  height={400}
+                  className="w-full h-full"
+                  alt="Slider Image"
+                />
+              </CarouselItem>
+              <CarouselItem className="">
+                <Image
+                  src="/static/tv.jpeg"
+                  width={400}
+                  height={400}
+                  className="w-full h-full"
+                  alt="Slider Image"
+                />
+              </CarouselItem>
+              <CarouselItem className="">
+                <Image
+                  src="/static/fridge.jpeg"
+                  width={400}
+                  height={400}
+                  className="w-full h-full"
+                  alt="Slider Image"
+                />
+              </CarouselItem>
+            </CarouselContent>
+          </Carousel>
         </div>
       </div>
     </div>

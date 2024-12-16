@@ -29,10 +29,10 @@ const Sidebar = ({ company = companyName }) => {
         </SheetTrigger>
         <SheetContent
           side="top"
-          className="bg-black text-white border-b border-black"
+          className="bg-primary border-b border-primary"
         >
           <SheetHeader>
-            <SheetTitle className="py-5 text-white text-left">
+            <SheetTitle className="py-5 text-left">
               {company}
             </SheetTitle>
           </SheetHeader>
@@ -81,7 +81,7 @@ const Sidebar = ({ company = companyName }) => {
                     ? "bg-boschPrimary border-boschPrimary text-white"
                     : company === "Siemens"
                     ? "bg-siemensPrimary border-siemensPrimary text-white"
-                    : " text-white",
+                    : "text-white bg-secondary",
                   "hover:border-black/10"
                 )}
               >

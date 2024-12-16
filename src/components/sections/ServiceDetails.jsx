@@ -1,7 +1,7 @@
 "use client";
 
 import { getData, companyName } from "@/libs/data";
-import { getSolarData } from "@/libs/solardata"; // Import solar data
+import { getSolarData } from "@/libs/solardata";
 import OneService from "./OneService";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
@@ -9,23 +9,25 @@ import { usePathname } from "next/navigation";
 const ServiceDetails = ({ company = companyName }) => {
   const pathname = usePathname();
 
-  // Determine which data to use based on the route
   const services =
     pathname === "/companies/water-heater"
-      ? getSolarData(company) // Use solar data for water-heater route
-      : getData(company); // Use general data for other routes
+      ? getSolarData(company)
+      : getData(company);
 
   return (
-    <div
-      className="flex flex-col items-center justify-center w-full shadow-xl bg-primary border-b border-black"
+    <section
       id="service-details"
+      className="w-full bg-gray-50 shadow-lg border-b-2 border-gray-300"
     >
-      <div className="flex flex-col items-center justify-center w-full max-w-7xl px-5 py-20 gap-5">
-        <div className="text-3xl w-fit flex justify-center items-center flex-col gap-2 font-semibold uppercase">
-          Service Details
+      <div className="flex flex-col items-center w-full max-w-7xl mx-auto px-6 py-16 gap-8">
+        {/* Header */}
+        <div className="text-center">
+          <h2 className="text-4xl font-bold uppercase text-gray-800">
+            Service Highlights
+          </h2>
           <div
             className={cn(
-              "w-1/2 h-0.5",
+              "mt-3 w-16 h-1 mx-auto",
               company === "Lg"
                 ? "bg-lgPrimary"
                 : company === "Samsung"
@@ -38,33 +40,34 @@ const ServiceDetails = ({ company = companyName }) => {
             )}
           ></div>
         </div>
-        <div className="max-w-6xl text-center text-sm">
-          We offer a comprehensive range of home appliance repair services
-          tailored to meet your specific needs. Our skilled technicians are
-          trained to handle various appliance issues, from refrigerators and
-          washers to ovens and dishwashers. We pride ourselves on our
-          transparent service process, ensuring that you're informed every step
-          of the way. With a commitment to using high-quality parts and the
-          latest repair techniques, we aim to restore your appliances to optimal
-          functioning as quickly and efficiently as possible. Explore our
-          detailed service offerings below to find the right solution for your
-          appliance repair needs.
+
+        {/* Description */}
+        <p className="max-w-3xl text-center text-gray-700 text-base leading-7">
+          Discover a wide array of repair services designed to meet the unique
+          needs of your home appliances. From fixing refrigerators and washing
+          machines to restoring ovens and dishwashers, we’ve got you covered.
+          Our expert technicians are equipped with the latest tools and
+          techniques to ensure reliable, efficient repairs. Browse our service
+          offerings below to find the perfect solution for your appliance
+          issues.
+        </p>
+
+        {/* Services Grid */}
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full">
+          {services.map((service) => (
+            <OneService
+              key={service.slug}
+              title={service.title}
+              description={service.description}
+              commonProblems={service.commonProblems}
+              slug={service.slug}
+              company={company}
+              imgUrl={service.imgUrl}
+            />
+          ))}
         </div>
       </div>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 text-black lg:grid-cols-4 p-5 gap-5">
-        {services.map((service) => (
-          <OneService
-            key={service.slug}
-            title={service.title}
-            description={service.description}
-            commonProblems={service.commonProblems}
-            slug={service.slug}
-            company={company}
-            imgUrl={service.imgUrl}
-          />
-        ))}
-      </div>
-    </div>
+    </section>
   );
 };
 

@@ -5,63 +5,47 @@ import { cn } from "@/lib/utils";
 const WhyChooseUs = ({ company = companyName }) => {
   return (
     <section id="contact" className="flex justify-center w-full">
-      <div className="flex w-full max-w-7xl px-5 py-20 flex-col justify-center items-center">
-        <div className="text-3xl w-fit flex justify-center items-center flex-col gap-2 font-semibold uppercase mb-8">
-          <div
-            className={cn(
-              "w-1/2 h-1 rounded-full",
-              company === "Lg"
-                ? "bg-lgPrimary"
-                : company === "Samsung"
-                ? "bg-samsungPrimary"
-                : company === "Bosch"
-                ? "bg-boschPrimary"
-                : company === "Siemens"
-                ? "bg-siemensPrimary"
-                : "bg-black"
-            )}
-          ></div>
-          Why Choose Us
+      <div className="flex w-full max-w-7xl bg-black/10 border-x-4 border-primary md:p-20 p-5 flex-col justify-center">
+        <div className="text-3xl w-fit flex justify-center flex-col gap-2 font-semibold uppercase mb-8">
+          Why Choose Our Services
         </div>
         <div className="max-w-6xl mx-auto text-lg mb-6">
           <p className="mb-4">
-            We understand that choosing the right appliance repair service is
-            crucial for your home. Our commitment to excellence, combined with
-            our extensive experience, makes us the ideal choice for all your
-            appliance needs. Here’s why our customers trust us:
+            Selecting the right appliance repair company is essential to keeping
+            your home running smoothly. With our dedication to quality and years
+            of expertise, we’re the trusted choice for all your appliance repair
+            needs. Here’s what sets us apart:
           </p>
           <ul className="list-disc list-inside space-y-2">
             <li>
-              <span className="font-bold">Expert Technicians:</span> Our
-              certified technicians are well-trained in the latest repair
-              techniques, ensuring efficient and reliable service.
+              <span className="font-bold">Skilled Professionals:</span> Our
+              certified experts stay up-to-date with the latest repair methods
+              to deliver dependable results every time.
             </li>
             <li>
-              <span className="font-bold">Quality Repairs:</span> We use
-              top-quality parts and tools, restoring your appliances to their
-              optimal performance.
+              <span className="font-bold">Top-Notch Repairs:</span> We use
+              premium-quality parts and tools to restore your appliances to peak
+              performance.
             </li>
             <li>
-              <span className="font-bold">Transparent Pricing:</span> Enjoy
-              clear and competitive pricing with no hidden fees, so you know
-              exactly what to expect.
+              <span className="font-bold">Honest Pricing:</span> Expect clear,
+              upfront pricing with no surprises—so you’ll always know what
+              you’re paying for.
             </li>
             <li>
-              <span className="font-bold">Convenient Service:</span> We offer
-              flexible scheduling options, including same-day and emergency
-              services, to fit your busy lifestyle.
+              <span className="font-bold">Convenient Scheduling:</span> We offer
+              flexible appointment options, including same-day and emergency
+              services, to fit your schedule.
             </li>
             <li>
-              <span className="font-bold">
-                Customer Satisfaction Guarantee:
-              </span>{" "}
-              We back our work with a warranty on all repairs, ensuring peace of
-              mind with every service.
+              <span className="font-bold">Satisfaction Guaranteed:</span> All
+              repairs are backed by a warranty, giving you confidence and peace
+              of mind.
             </li>
             <li>
-              <span className="font-bold">Responsive Support:</span> Our
-              friendly customer service team is always ready to assist with any
-              questions or concerns you may have.
+              <span className="font-bold">Reliable Support:</span> Our friendly
+              customer care team is always ready to answer your questions and
+              address your concerns.
             </li>
           </ul>
         </div>

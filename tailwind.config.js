@@ -9,8 +9,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#d4fd51",
-        secondary: "#E5E5E5",
+        primary: "#90DDF0",
+        secondary: "#F0EDEE",
+        tertiary: "#2C666E",
 
         siemensPrimary: "#019997",
         siemensSecondary: "#FFFFFF",
@@ -32,6 +33,20 @@ module.exports = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      animation: {
+        marquee: "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
       },
     },
   },

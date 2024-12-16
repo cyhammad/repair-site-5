@@ -15,7 +15,6 @@ const OurServices = ({ company = companyName }) => {
     <section id="services" className="flex items-center justify-center w-full">
       <div className="flex flex-col justify-center w-full max-w-7xl px-5 py-20 gap-5">
         <div className="text-3xl w-fit flex justify-center flex-col gap-2 font-semibold uppercase">
-          <div className="w-1/3 h-1 rounded-full bg-black"></div>
           Our services
         </div>
         <div className="max-w-3xl text-sm">

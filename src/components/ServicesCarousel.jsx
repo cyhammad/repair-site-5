@@ -23,33 +23,35 @@ const ServicesCarousel = ({ company = companyName }) => {
       : getData(company); // Use general data for other routes
 
   return (
-    <Carousel
-      opts={{
-        loop: true,
-      }}
-      plugins={[
-        Autoplay({
-          delay: 3000,
-        }),
-      ]}
-      className="max-w-[80vw] w-full py-10"
-    >
-      <CarouselContent>
-        {services.map((service) => (
-          <CarouselItem
-            className="md:basis-1/2 lg:basis-1/3"
-            key={service.slug}
-          >
-            <ServiceCard
-              imgUrl={service.imgUrl}
-              title={service.title}
-              desc={service.description}
-              company={company}
-            />
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-    </Carousel>
+    <div className="w-full">
+      <Carousel
+        opts={{
+          loop: true,
+        }}
+        plugins={[
+          Autoplay({
+            delay: 3000,
+          }),
+        ]}
+        className="w-full py-10"
+      >
+        <CarouselContent>
+          {services.map((service) => (
+            <CarouselItem
+              className="lg:basis-1/2"
+              key={service.slug}
+            >
+              <ServiceCard
+                imgUrl={service.imgUrl}
+                title={service.title}
+                desc={service.description}
+                company={company}
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+    </div>
   );
 };
 
