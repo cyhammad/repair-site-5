@@ -2,6 +2,7 @@
 import { companyName } from "@/libs/data";
 import CallAndWhatsappButton from "../buttons/CallAndWhatsappButton";
 import { usePathname } from "next/navigation";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
@@ -43,6 +44,11 @@ const MainBanner = ({ company = companyName }) => {
             opts={{
               loop: true,
             }}
+            plugins={[
+              Autoplay({
+                delay: 2000,
+              }),
+            ]}
           >
             <CarouselContent>
               <CarouselItem className="">
