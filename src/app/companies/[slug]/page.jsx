@@ -5,7 +5,6 @@ import ServiceDetails from "@/components/sections/ServiceDetails";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import Header from "@/components/header/Header";
 import Footer from "@/components/Footer";
-import ReviewMarquee from "@/components/sections/ReviewMarquee";
 
 const Company = async ({ params }) => {
   const { slug } = await params; // Await the params
@@ -14,7 +13,6 @@ const Company = async ({ params }) => {
     <>
       <Header company={company} />
       <MainBanner company={company} />
-      <ReviewMarquee company={company} />
       <OurServices company={company} />
       <AboutSection company={company} />
       <WhyChooseUs company={company} />

@@ -48,7 +48,7 @@ const AboutSection = ({ company = companyName }) => {
           ? "bg-siemensPrimary text-white"
           : company === "Bosch"
           ? "bg-boschBlob"
-          : "bg-tertiary"
+          : "bg-secondary"
       )}
     >
       <div className="grid md:grid-cols-2 w-full h-full max-w-7xl">

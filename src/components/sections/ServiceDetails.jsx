@@ -27,7 +27,7 @@ const ServiceDetails = ({ company = companyName }) => {
           ? "bg-siemensBlob"
           : company === "Bosch"
           ? "bg-boschBlob border-boschPrimary/20"
-          : "bg-tertiary"
+          : "bg-secondary"
       )}
     >
       <div className="flex flex-col items-center w-full max-w-7xl mx-auto px-6 py-16 gap-8">
