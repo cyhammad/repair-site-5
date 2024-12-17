@@ -7,10 +7,8 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 
-const Footer = () => {
+const Footer = ({ company = companyName }) => {
   const pathname = usePathname();
-  const isWaterHeaterRoute = pathname === "/companies/water-heater";
-  const company = isWaterHeaterRoute ? "Repair Site 5" : companyName;
 
   return (
     <footer
@@ -40,7 +38,12 @@ const Footer = () => {
             </Link>
           ) : company === "Bosch" ? (
             <Link href="/companies/bosch">
-              <Image src="/static/bosch.svg" width={150} height={50} alt="Bosch" />
+              <Image
+                src="/static/bosch.svg"
+                width={150}
+                height={50}
+                alt="Bosch"
+              />
             </Link>
           ) : company === "Samsung" ? (
             <Link href="/companies/samsung">
@@ -61,9 +64,9 @@ const Footer = () => {
             </Link>
           )}
           <span className="text-sm font-light max-w-sm">
-            Welcome to {company}, your most trusted partner in home appliance repair!
-            With over years of experience, we specialize in providing reliable
-            and efficient repair services for a wide range of household
+            Welcome to {company}, your most trusted partner in home appliance
+            repair! With over years of experience, we specialize in providing
+            reliable and efficient repair services for a wide range of household
             appliances.
           </span>
           <CallAndWhatsappButton company={company} />

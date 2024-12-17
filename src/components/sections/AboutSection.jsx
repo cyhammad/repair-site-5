@@ -38,25 +38,22 @@ const AboutSection = ({ company = companyName }) => {
   return (
     <section
       id="about"
-      className="flex items-center justify-center w-full min-h-[40rem] bg-primary py-5"
+      className={cn(
+        "flex items-center justify-center w-full min-h-[40rem] bg-primary py-5",
+        company === "Lg"
+          ? "bg-lgPrimary text-white"
+          : company === "Samsung"
+          ? "bg-samsungPrimary text-white"
+          : company === "Siemens"
+          ? "bg-siemensPrimary text-white"
+          : company === "Bosch"
+          ? "bg-boschBlob"
+          : "bg-tertiary"
+      )}
     >
       <div className="grid md:grid-cols-2 w-full h-full max-w-7xl">
         <div className="w-full px-10 py-16">
           <div className="text-3xl w-fit flex justify-center flex-col gap-2 font-semibold uppercase">
-            <div
-              className={cn(
-                "w-1/2 h-0.5",
-                company === "Lg"
-                  ? "bg-lgPrimary"
-                  : company === "Samsung"
-                  ? "bg-samsungPrimary"
-                  : company === "Bosch"
-                  ? "bg-boschPrimary"
-                  : company === "Siemens"
-                  ? "bg-siemensPrimary"
-                  : "bg-primary"
-              )}
-            ></div>
             About us
           </div>
           <p className="my-5">

@@ -5,7 +5,20 @@ import { cn } from "@/lib/utils";
 const WhyChooseUs = ({ company = companyName }) => {
   return (
     <section id="contact" className="flex justify-center w-full">
-      <div className="flex w-full max-w-7xl bg-black/10 border-x-4 border-primary md:p-20 p-5 flex-col justify-center">
+      <div
+        className={cn(
+          "flex w-full max-w-7xl bg-black/10 border-x-4 border-primary md:p-20 p-5 flex-col justify-center",
+          company === "Lg"
+            ? "bg-lgBlob border-b-4 rounded-b-2xl border-lgPrimary/20"
+            : company === "Samsung"
+            ? "bg-samsungBlob border-b-4 rounded-b-2xl text-black border-samsungPrimary/20"
+            : company === "Siemens"
+            ? "bg-siemensBlob border-b-4 rounded-b-2xl"
+            : company === "Bosch"
+            ? "bg-boschBlob border-b-4 rounded-b-2xl border-boschPrimary/20"
+            : "bg-tertiary"
+        )}
+      >
         <div className="text-3xl w-fit flex justify-center flex-col gap-2 font-semibold uppercase mb-8">
           Why Choose Our Services
         </div>

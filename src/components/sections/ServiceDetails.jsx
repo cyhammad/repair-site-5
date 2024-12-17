@@ -17,7 +17,18 @@ const ServiceDetails = ({ company = companyName }) => {
   return (
     <section
       id="service-details"
-      className="w-full bg-gray-50 shadow-lg border-b-2 border-gray-300"
+      className={cn(
+        "w-full bg-gray-50 shadow-lg border-b-2 border-gray-300",
+        company === "Lg"
+          ? "bg-lgBlob border-lgPrimary/20"
+          : company === "Samsung"
+          ? "bg-samsungBlob text-black border-samsungPrimary/20"
+          : company === "Siemens"
+          ? "bg-siemensBlob"
+          : company === "Bosch"
+          ? "bg-boschBlob border-boschPrimary/20"
+          : "bg-tertiary"
+      )}
     >
       <div className="flex flex-col items-center w-full max-w-7xl mx-auto px-6 py-16 gap-8">
         {/* Header */}
@@ -25,20 +36,6 @@ const ServiceDetails = ({ company = companyName }) => {
           <h2 className="text-4xl font-bold uppercase text-gray-800">
             Service Highlights
           </h2>
-          <div
-            className={cn(
-              "mt-3 w-16 h-1 mx-auto",
-              company === "Lg"
-                ? "bg-lgPrimary"
-                : company === "Samsung"
-                ? "bg-samsungPrimary"
-                : company === "Bosch"
-                ? "bg-boschPrimary"
-                : company === "Siemens"
-                ? "bg-siemensPrimary"
-                : "bg-primary"
-            )}
-          ></div>
         </div>
 
         {/* Description */}

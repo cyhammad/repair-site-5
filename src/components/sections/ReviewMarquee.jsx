@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import Marquee from "@/components/ui/marquee";
+import { companyName } from "@/libs/data";
 const reviews = [
   {
     name: "Jack",
@@ -61,9 +62,22 @@ const ReviewCard = ({ img, name, username, body }) => {
     </figure>
   );
 };
-const ReviewMarquee = () => {
+const ReviewMarquee = ({ company = companyName }) => {
   return (
-    <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-tertiary text-white py-20 md:shadow-xl">
+    <div
+      className={cn(
+        "relative flex h-full w-full flex-col items-center justify-center overflow-hidden border text-white py-20 md:shadow-xl",
+        company === "Lg"
+          ? "bg-lgPrimary"
+          : company === "Samsung"
+          ? ""
+          : company === "Siemens"
+          ? "bg-siemensPrimary"
+          : company === "Bosch"
+          ? "bg-boschSecondary"
+          : "bg-tertiary"
+      )}
+    >
       <Marquee pauseOnHover className="[--duration:20s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
