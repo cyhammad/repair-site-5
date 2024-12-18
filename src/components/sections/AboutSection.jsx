@@ -6,8 +6,10 @@ import CallAndWhatsappButton from "../buttons/CallAndWhatsappButton";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 
-const AboutSection = ({ company = companyName }) => {
+const AboutSection = ({ company = companyName },route) => {
   const pathname = usePathname();
+  const displayCompany =
+  route !== "/" && company !== "United Appliances Repairs" ? company : "";
 
   // Define services for water-heater and general cases
   const waterHeaterServices = [
@@ -20,13 +22,13 @@ const AboutSection = ({ company = companyName }) => {
   ];
 
   const generalServices = [
-    "Washing Machine Repair",
-    "Dryer Repair",
-    "Dishwasher Repair",
-    "Stove/Cooker Repair",
-    "Television Repair",
-    "Gas Oven Repair",
-    "Fridge Repair",
+   `${displayCompany} Washing Machine Repair`,
+`${displayCompany} Dryer Repair`,
+`${displayCompany} Dishwasher Repair`,
+`${displayCompany} Stove/Cooker Repair`,
+`${displayCompany} Television Repair`,
+`${displayCompany} Gas Oven Repair`,
+`${displayCompany} Fridge Repair`,
   ];
 
   // Determine which services to display
@@ -73,9 +75,11 @@ const AboutSection = ({ company = companyName }) => {
           <CallAndWhatsappButton company={company} className="py-10" />
         </div>
         <div
-          className="w-full bg-cover min-h-[25rem] rounded-2xl border-4 border-tertiary bg-center bg-no-repeat"
+          className="w-full bg-cover min-h-[35rem] rounded-2xl border-4 border-tertiary bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url(/static/about.avif)",
+            backgroundImage: "url(/static/about.jpg)",
+            
+        
           }}
         ></div>
       </div>

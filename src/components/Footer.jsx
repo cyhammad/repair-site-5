@@ -22,7 +22,7 @@ const Footer = ({ company = companyName }) => {
           ? "text-black"
           : company === "Siemens"
           ? "bg-siemensSecondary border-siemensSecondary text-black"
-          : "bg-primary text-black"
+          : "bg-[#07393c] text-white"
       )}
     >
       <div className="grid md:grid-cols-[2fr_1fr_1fr] border-t border-black/5 w-full max-w-7xl gap-10 px-5 py-10">

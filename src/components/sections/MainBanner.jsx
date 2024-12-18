@@ -13,11 +13,25 @@ import {
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-const MainBanner = ({ company = companyName }) => {
+const MainBanner = ({ company = companyName },route) => {
   const pathname = usePathname();
-
+  const displayCompany =
+  route !== "/" && company !== "United Appliances Repairs" ? company : "";
   const dynamicCompany =
     pathname === "/companies/water-heater" ? "Water Heater" : company;
+
+    const borderColorClass =
+    company === "Lg"
+      ? "border-lgPrimary"
+      : company === "Samsung"
+      ? "border-samsungPrimary"
+      : company === "Bosch"
+      ? "border-boschPrimary"
+      : company === "Siemens"
+      ? "border-siemensPrimary"
+      : pathname === "/companies/water-heater"
+      ? "border-blue-500"
+      : "border-tertiary"; // Default border color
 
   return (
     <div
@@ -34,17 +48,21 @@ const MainBanner = ({ company = companyName }) => {
       <div className="grid md:grid-cols-2 bg-white/80 px-5 pt-36 pb-10 md:py-10 gap-5 w-full max-w-7xl">
         <div className="flex flex-col justify-center gap-5 w-full">
           <h1 className="text-4xl max-w-[550px] font-bold">
-            We offer reliable and affordable services
+            We offer reliable and affordable {displayCompany} Repair services
           </h1>
           <p className="max-w-[550px]">
-            Quick and Reliable Appliance Repair is offered by Karsaaz in
-            Rawalpindi near you. Kitchen and Laundry Appliance Repair with our
-            experts. Call us today. Pro technician Quote. Services: Appliance
-            Repair, Oven Repair.
+            Quick and Reliable {displayCompany} Repair Services are offered in
+            UAE. Kitchen and Laundry Appliance Repair with our
+            experts. Call us today. Pro technician Quote.
           </p>
           <CallAndWhatsappButton company={dynamicCompany} className="py-5" />
         </div>
-        <div className="w-full border-4 border-tertiary rounded-3xl overflow-hidden">
+        <div
+          className={cn(
+            "w-full border-2 rounded-2xl overflow-hidden",
+            borderColorClass // Apply the dynamic border color
+          )}
+        >
           <Carousel
             opts={{
               loop: true,
@@ -67,15 +85,6 @@ const MainBanner = ({ company = companyName }) => {
               </CarouselItem>
               <CarouselItem className="">
                 <Image
-                  src="/static/tv.avif"
-                  width={400}
-                  height={400}
-                  className="w-full h-full"
-                  alt="Slider Image"
-                />
-              </CarouselItem>
-              <CarouselItem className="">
-                <Image
                   src="/static/fridge.jpg"
                   width={400}
                   height={400}
@@ -90,5 +99,6 @@ const MainBanner = ({ company = companyName }) => {
     </div>
   );
 };
+
 
 export default MainBanner;

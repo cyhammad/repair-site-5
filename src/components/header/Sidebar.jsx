@@ -29,7 +29,7 @@ const Sidebar = ({ company = companyName }) => {
         </SheetTrigger>
         <SheetContent
           side="top"
-          className="bg-primary border-b border-primary"
+          className="bg-[#f7f7f7] border-b border-primary"
         >
           <SheetHeader>
             <SheetTitle className="py-5 text-left">

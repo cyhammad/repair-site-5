@@ -11,15 +11,15 @@ const CallAndWhatsappButton = ({ className, company = companyName }) => {
       <button
         onClick={dialPhone}
         className={cn(
-          "group flex items-center gap-2 pl-2 pr-4 rounded-full text-sm py-1.5",
+          "group flex items-center gap-2 pl-2 pr-4 rounded-full text-sm py-1.5  ",
           company === "Lg"
-            ? "bg-lgPrimary border-lgPrimary text-white"
+            ? "bg-lgPrimary border-lgPrimary text-white border-[2px] border-white "
             : company === "Samsung"
-            ? "bg-samsungPrimary border-samsungPrimary text-white"
+            ? "bg-samsungPrimary border-samsungPrimary text-white border-[2px] border-white"
             : company === "Bosch"
-            ? "bg-boschPrimary border-boschPrimary text-white"
+            ? "bg-boschPrimary border-boschPrimary text-white border-[2px] border-white"
             : company === "Siemens"
-            ? "bg-siemensPrimary border-siemensPrimary text-white"
+            ? "bg-siemensPrimary border-siemensPrimary text-white border-[2px] border-white"
             : "bg-tertiary border-primary text-white",
           "hover:border-black/10"
         )}
@@ -50,13 +50,13 @@ const CallAndWhatsappButton = ({ className, company = companyName }) => {
         className={cn(
           "group flex items-center gap-2 px-4 rounded-full text-sm py-2",
           company === "Lg"
-            ? "bg-lgSecondary border-lgSecondary text-white"
+            ? "bg-lgSecondary border-lgSecondary text-white  "
             : company === "Samsung"
-            ? "bg-samsungSecondary border-samsungSecondary text-black"
+            ? "bg-samsungSecondary border-samsungSecondary text-black border-[2px] border-black"
             : company === "Bosch"
-            ? "bg-boschSecondary border-boschSecondary text-white"
+            ? "bg-boschSecondary border-boschSecondary text-white "
             : company === "Siemens"
-            ? "bg-siemensSecondary border-siemensSecondary text-black"
+            ? "bg-[#f0f4f9] border-siemensSecondary text-black  text-black border-[1px] border-[#019997]"
             : "bg-secondary border-secondary text-black",
           "hover:border-black/10"
         )}
