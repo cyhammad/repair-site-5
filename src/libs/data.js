@@ -4,7 +4,7 @@ export const companyName = "United Appliances Repairs";
 export const phoneNumber = "+971547445326";
 
 export const sendMessage = () => {
-  const message = "Hello, I want your repair services";
+  const message = "Hi,I need Appliance Repair Service Appointment.";
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     message
   )}`;
