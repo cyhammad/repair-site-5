@@ -32,7 +32,7 @@ export const getData = (company, route) => {
         `${displayCompany} Unusual noises during wash`,
         `${displayCompany} Door latch issues`,
         `${displayCompany} Dishwasher unusual cycles`,
-        `${displayCompany} Odors coming from  appliance`,
+        `${displayCompany} Odors issues`,
         `${displayCompany} Error codes appearing `,
         `${displayCompany} Water not filling`,
       ],
@@ -63,7 +63,7 @@ export const getData = (company, route) => {
       commonProblems: [
         `${displayCompany} Machine not turning on`,
         `${displayCompany} Water not filling`,
-        `${displayCompany} Excessive noise during operation`,
+        `${displayCompany} Excessive noise`,
         `${displayCompany} Draining issues`,
         `${displayCompany} Leaking water`,
         `${displayCompany} Door not sealing properly`,
