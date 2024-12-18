@@ -85,7 +85,7 @@ export const getData = (company,route) => {
       imgUrl:
         company === "Bosch" || company === "Siemens" || company === companyName
           ? "/static/stove.jpg"
-          : "/static/tv.jpeg",
+          : "/static/tv.jpg",
       description:
         company === "Bosch" || company === "Siemens" || company === companyName
           ? `At ${company}, we deliver quality stove and cooker repair services. Our skilled technicians are adept at diagnosing and fixing a range of issues, ensuring your cooking appliance operates safely and effectively.`
