@@ -15,9 +15,9 @@ export const dialPhone = () => {
   window.location.href = `tel:${phoneNumber}`;
 };
 
-export const getData = (company,route) => {
+export const getData = (company, route) => {
   const displayCompany =
-  route !== "/" && company !== "United Appliances Repairs" ? company : "";
+    route !== "/" && company !== "United Appliances Repairs" ? company : "";
   const allData = [
     {
       title: "Dishwasher Repair",
@@ -29,9 +29,9 @@ export const getData = (company,route) => {
         `${displayCompany} Water not draining properly`,
         `${displayCompany} Dishes not coming out clean`,
         `${displayCompany} Leaking water`,
-        `${displayCompany} Unusual noises during operation`,
+        `${displayCompany} Unusual noises during wash`,
         `${displayCompany} Door latch issues`,
-        `${displayCompany} Dishwasher cycles taking too long`,
+        `${displayCompany} Dishwasher unusual cycles`,
         `${displayCompany} Odors coming from  appliance`,
         `${displayCompany} Error codes appearing `,
         `${displayCompany} Water not filling`,
@@ -44,15 +44,15 @@ export const getData = (company,route) => {
       description: `At ${displayCompany}, we offer expert dryer repair services to ensure your appliance functions properly. Our trained technicians can address a variety of dryer issues, helping you get back to your laundry routine quickly.`,
       commonProblems: [
         `${displayCompany} Dryer not starting`,
-        `${displayCompany} Clothes not drying completely`,
-        `${displayCompany} Excessive noise during operation`,
+        `${displayCompany} Clothes not drying`,
+        `${displayCompany} Excessive noise in wash`,
         `${displayCompany} Drum not spinning`,
         `${displayCompany} Overheating`,
         `${displayCompany} Lint trap issues`,
         `${displayCompany} Dryer cycle not finishing`,
         `${displayCompany} Bad odor from dryer`,
-        `${displayCompany} Error codes appearing on display`,
-        `${displayCompany} Drum making thumping noises`
+        `${displayCompany} Error codes appearing`,
+        `${displayCompany} Drum making noises`
       ],
     },
     {
@@ -92,19 +92,19 @@ export const getData = (company,route) => {
           : `At ${company}, we provide reliable TV repair services. Our skilled technicians can troubleshoot and resolve various television issues, ensuring you enjoy your favorite shows without disruption.`,
       commonProblems:
         company === "Bosch" || company === "Siemens" || company === companyName
-          ?[
+          ? [
             `${displayCompany} Burners not lighting`,
             `${displayCompany} Uneven heating`,
-            `${displayCompany} Oven not reaching temperature`,
+            `${displayCompany} Oven not heating`,
             `${displayCompany} Self-cleaning cycle issues`,
             `${displayCompany} Control panel problems`,
             `${displayCompany} Gas leaks`,
             `${displayCompany} Electric ignition failure`,
             `${displayCompany} Burner clicking noises`,
-            `${displayCompany} Oven door not closing properly`,
+            `${displayCompany} Oven door issues`,
             `${displayCompany} Error codes on display`,
           ]
-        : [
+          : [
             `${displayCompany} TV not turning on`,
             `${displayCompany} Screen flickering`,
             `${displayCompany} No sound`,
@@ -124,15 +124,15 @@ export const getData = (company,route) => {
       description: `At ${displayCompany}, we specialize in oven repair services to keep your cooking appliances in top shape. Our technicians are trained to handle various oven issues, ensuring you can cook your meals without interruption.`,
       commonProblems: [
         `${displayCompany} Oven not heating`,
-  `${displayCompany} Temperature issues`,
-  `${displayCompany} Oven door not sealing`,
-  `${displayCompany} Self-cleaning problems`,
-  `${displayCompany} Ignition issues`,
-  `${displayCompany} Faulty thermostat`,
-  `${displayCompany} Error codes on display`,
-  `${displayCompany} Unusual noises during operation`,
-  `${displayCompany} Oven light not working`,
-  `${displayCompany} Electrical problems`,
+        `${displayCompany} Temperature issues`,
+        `${displayCompany} Oven door not sealing`,
+        `${displayCompany} Self-cleaning problems`,
+        `${displayCompany} Ignition issues`,
+        `${displayCompany} Faulty thermostat`,
+        `${displayCompany} Error codes on display`,
+        `${displayCompany} Unusual noises `,
+        `${displayCompany} Oven light not working`,
+        `${displayCompany} Electrical problems`,
       ],
     },
     {
@@ -142,15 +142,15 @@ export const getData = (company,route) => {
       description: `At ${displayCompany}, we offer comprehensive fridge repair services. Our experienced technicians can diagnose and fix a variety of refrigerator issues, ensuring your food stays fresh and safe.`,
       commonProblems: [
         `${displayCompany} Fridge not cooling`,
-  `${displayCompany} Excessive noise`,
-  `${displayCompany} Leaking water`,
-  `${displayCompany} Ice maker issues`,
-  `${displayCompany} Frost buildup in freezer`,
-  `${displayCompany} Fridge cycling too frequently`,
-  `${displayCompany} Temperature inconsistencies`,
-  `${displayCompany} Condenser coils problems`,
-  `${displayCompany} Door seal issues`,
-  `${displayCompany} Error codes on display`,
+        `${displayCompany} Excessive noise`,
+        `${displayCompany} Leaking water`,
+        `${displayCompany} Ice maker issues`,
+        `${displayCompany} Frost buildup `,
+        `${displayCompany} Fridge cycling too frequently`,
+        `${displayCompany} Temperature issues`,
+        `${displayCompany} Condenser coils problems`,
+        `${displayCompany} Door seal issues`,
+        `${displayCompany} Error codes on display`,
       ],
     },
   ];
@@ -172,7 +172,7 @@ export const getData = (company,route) => {
       `${displayCompany} Error codes on display`,
     ],
   };
-  
+
   return company === companyName ? allData.concat(tvRepair) : allData;
-  
+
 };
