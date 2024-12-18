@@ -26,7 +26,6 @@ const AboutSection = ({ company = companyName },route) => {
 `${displayCompany} Dryer Repair`,
 `${displayCompany} Dishwasher Repair`,
 `${displayCompany} Stove/Cooker Repair`,
-`${displayCompany} Television Repair`,
 `${displayCompany} Gas Oven Repair`,
 `${displayCompany} Fridge Repair`,
   ];
