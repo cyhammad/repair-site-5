@@ -1,5 +1,5 @@
 
-export const companyName = "United Appliances Repairs";
+export const companyName = "Prime Appliances Care UAE";
 
 export const phoneNumber = "+971547445326";
 
@@ -17,7 +17,7 @@ export const dialPhone = () => {
 
 export const getData = (company, route) => {
   const displayCompany =
-    route !== "/" && company !== "United Appliances Repairs" ? company : "";
+    route !== "/" && company !== "Prime Appliances Care UAE" ? company : "";
   const allData = [
     {
       title: "Dishwasher Repair",

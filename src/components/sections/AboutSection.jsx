@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 const AboutSection = ({ company = companyName },route) => {
   const pathname = usePathname();
   const displayCompany =
-  route !== "/" && company !== "United Appliances Repairs" ? company : "";
+  route !== "/" && company !== "Prime Appliances Care UAE" ? company : "";
 
   // Define services for water-heater and general cases
   const waterHeaterServices = [

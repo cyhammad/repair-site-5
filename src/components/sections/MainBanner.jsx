@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
 const MainBanner = ({ company = companyName },route) => {
   const pathname = usePathname();
   const displayCompany =
-  route !== "/" && company !== "United Appliances Repairs" ? company : "";
+  route !== "/" && company !== "Prime Appliances Care UAE" ? company : "";
   const dynamicCompany =
     pathname === "/companies/water-heater" ? "Water Heater" : company;
 
